@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iBeaconModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BEACON_DEVICES">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BEACON_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BEACON_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="BEACON_UUID" Type="nvarchar" MaxLength="50" />
+    <Property Name="BEACON_MAJOR" Type="int" />
+    <Property Name="BEACON_MINOR" Type="int" Nullable="false" />
+    <Property Name="IS_BROADCASTING" Type="bit" />
+    <Property Name="SUBTITLE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SELLING_GLASS" Type="int" Nullable="false" />
+    <Property Name="ACTIVE" Type="bit" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BEACON_ITEMS_ADVERTISEMENT">
+    <Key>
+      <PropertyRef Name="ID_ITEM" />
+    </Key>
+    <Property Name="ID_ITEM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ITEAM_GUID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ITEM_IMG_URL" Type="nvarchar" MaxLength="255" />
+    <Property Name="STRORE_ID" Type="int" />
+    <Property Name="TYPE" Type="int" />
+    <Property Name="START_DATE" Type="date" />
+    <Property Name="END_DATE" Type="date" />
+    <Property Name="IS_ACTIVE" Type="bit" />
+    <Property Name="NUMBER_LIKE" Type="int" />
+    <Property Name="NUMBER_1_STAR" Type="int" />
+    <Property Name="NUMBER_2_STAR" Type="int" />
+    <Property Name="NUMBER_3_STAR" Type="int" />
+    <Property Name="NUMBER_4_STAR" Type="int" />
+    <Property Name="NUMBER_5_STAR" Type="int" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRICE" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'iBeacon.dbo.BEACON_NOTIFICATION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BEACON_NOTIFICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NOTI_GUID" Type="nvarchar" MaxLength="50" />
+    <Property Name="NOTI_MESSAGE" Type="nvarchar" MaxLength="50" />
+    <Property Name="NOTI_WIFI" Type="nvarchar" MaxLength="50" />
+    <Property Name="NOTI_PASSWORD_WIFI" Type="nvarchar" MaxLength="50" />
+    <Property Name="STORE_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="BEACON_VIDEOS">
+    <Key>
+      <PropertyRef Name="ID_VIDEO" />
+    </Key>
+    <Property Name="ID_VIDEO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VIDEO_URL" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="STROE_ID" Type="int" />
+    <Property Name="TYPE" Type="int" />
+    <Property Name="START_DATE" Type="date" />
+    <Property Name="END_DATE" Type="date" />
+    <Property Name="IS_ACTIVE" Type="bit" />
+  </EntityType>
+  <EntityType Name="IBEACON_STORES">
+    <Key>
+      <PropertyRef Name="ID_STORE" />
+    </Key>
+    <Property Name="ID_STORE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="STORE_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="STORE_TYPE_ID" Type="int" Nullable="false" />
+    <Property Name="MALL_ID" Type="int" Nullable="false" />
+    <Property Name="BROADCAST_ENABLE" Type="bit" Nullable="false" />
+    <Property Name="HOME_PAGE" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MALL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MALL_GUID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MALL_NAME" Type="nvarchar" MaxLength="150" />
+    <Property Name="LOCATION_CODE" Type="nvarchar" MaxLength="150" />
+    <Property Name="BEACON_ID" Type="int" />
+    <Property Name="LAT" Type="int" />
+    <Property Name="LONG" Type="int" />
+    <Property Name="RADIUS" Type="nchar" MaxLength="10" />
+    <Property Name="BROADCAST_ENABLE" Type="bit" />
+  </EntityType>
+  <EntityType Name="STORE_TYPE">
+    <Key>
+      <PropertyRef Name="ID_STORE_TYPE" />
+    </Key>
+    <Property Name="ID_STORE_TYPE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityContainer Name="iBeaconModelStoreContainer">
+    <EntitySet Name="BEACON_DEVICES" EntityType="Self.BEACON_DEVICES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BEACON_ITEMS_ADVERTISEMENT" EntityType="Self.BEACON_ITEMS_ADVERTISEMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BEACON_VIDEOS" EntityType="Self.BEACON_VIDEOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IBEACON_STORES" EntityType="Self.IBEACON_STORES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MALL" EntityType="Self.MALL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STORE_TYPE" EntityType="Self.STORE_TYPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BEACON_NOTIFICATION" EntityType="Self.BEACON_NOTIFICATION" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BEACON_NOTIFICATION].[ID] AS [ID], 
+    [BEACON_NOTIFICATION].[NOTI_GUID] AS [NOTI_GUID], 
+    [BEACON_NOTIFICATION].[NOTI_MESSAGE] AS [NOTI_MESSAGE], 
+    [BEACON_NOTIFICATION].[NOTI_WIFI] AS [NOTI_WIFI], 
+    [BEACON_NOTIFICATION].[NOTI_PASSWORD_WIFI] AS [NOTI_PASSWORD_WIFI], 
+    [BEACON_NOTIFICATION].[STORE_ID] AS [STORE_ID]
+    FROM [dbo].[BEACON_NOTIFICATION] AS [BEACON_NOTIFICATION]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

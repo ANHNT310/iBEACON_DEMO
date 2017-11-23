@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="iBeaconModelStoreContainer" CdmEntityContainer="iBeaconEntities">
+    <EntitySetMapping Name="BEACON_DEVICES">
+      <EntityTypeMapping TypeName="iBeaconModel.BEACON_DEVICES">
+        <MappingFragment StoreEntitySet="BEACON_DEVICES">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="BEACON_ID" ColumnName="BEACON_ID" />
+          <ScalarProperty Name="BEACON_Name" ColumnName="BEACON_Name" />
+          <ScalarProperty Name="BEACON_UUID" ColumnName="BEACON_UUID" />
+          <ScalarProperty Name="BEACON_MAJOR" ColumnName="BEACON_MAJOR" />
+          <ScalarProperty Name="BEACON_MINOR" ColumnName="BEACON_MINOR" />
+          <ScalarProperty Name="IS_BROADCASTING" ColumnName="IS_BROADCASTING" />
+          <ScalarProperty Name="SUBTITLE" ColumnName="SUBTITLE" />
+          <ScalarProperty Name="SELLING_GLASS" ColumnName="SELLING_GLASS" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BEACON_ITEMS_ADVERTISEMENT">
+      <EntityTypeMapping TypeName="iBeaconModel.BEACON_ITEMS_ADVERTISEMENT">
+        <MappingFragment StoreEntitySet="BEACON_ITEMS_ADVERTISEMENT">
+          <ScalarProperty Name="ID_ITEM" ColumnName="ID_ITEM" />
+          <ScalarProperty Name="ITEAM_GUID" ColumnName="ITEAM_GUID" />
+          <ScalarProperty Name="ITEM_IMG_URL" ColumnName="ITEM_IMG_URL" />
+          <ScalarProperty Name="STRORE_ID" ColumnName="STRORE_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="NUMBER_LIKE" ColumnName="NUMBER_LIKE" />
+          <ScalarProperty Name="NUMBER_1_STAR" ColumnName="NUMBER_1_STAR" />
+          <ScalarProperty Name="NUMBER_2_STAR" ColumnName="NUMBER_2_STAR" />
+          <ScalarProperty Name="NUMBER_3_STAR" ColumnName="NUMBER_3_STAR" />
+          <ScalarProperty Name="NUMBER_4_STAR" ColumnName="NUMBER_4_STAR" />
+          <ScalarProperty Name="NUMBER_5_STAR" ColumnName="NUMBER_5_STAR" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BEACON_VIDEOS">
+      <EntityTypeMapping TypeName="iBeaconModel.BEACON_VIDEOS">
+        <MappingFragment StoreEntitySet="BEACON_VIDEOS">
+          <ScalarProperty Name="ID_VIDEO" ColumnName="ID_VIDEO" />
+          <ScalarProperty Name="VIDEO_URL" ColumnName="VIDEO_URL" />
+          <ScalarProperty Name="STROE_ID" ColumnName="STROE_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IBEACON_STORES">
+      <EntityTypeMapping TypeName="iBeaconModel.IBEACON_STORES">
+        <MappingFragment StoreEntitySet="IBEACON_STORES">
+          <ScalarProperty Name="ID_STORE" ColumnName="ID_STORE" />
+          <ScalarProperty Name="GUID" ColumnName="GUID" />
+          <ScalarProperty Name="STORE_NAME" ColumnName="STORE_NAME" />
+          <ScalarProperty Name="STORE_TYPE_ID" ColumnName="STORE_TYPE_ID" />
+          <ScalarProperty Name="MALL_ID" ColumnName="MALL_ID" />
+          <ScalarProperty Name="BROADCAST_ENABLE" ColumnName="BROADCAST_ENABLE" />
+          <ScalarProperty Name="HOME_PAGE" ColumnName="HOME_PAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MALLs">
+      <EntityTypeMapping TypeName="iBeaconModel.MALL">
+        <MappingFragment StoreEntitySet="MALL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MALL_GUID" ColumnName="MALL_GUID" />
+          <ScalarProperty Name="MALL_NAME" ColumnName="MALL_NAME" />
+          <ScalarProperty Name="LOCATION_CODE" ColumnName="LOCATION_CODE" />
+          <ScalarProperty Name="BEACON_ID" ColumnName="BEACON_ID" />
+          <ScalarProperty Name="LAT" ColumnName="LAT" />
+          <ScalarProperty Name="LONG" ColumnName="LONG" />
+          <ScalarProperty Name="RADIUS" ColumnName="RADIUS" />
+          <ScalarProperty Name="BROADCAST_ENABLE" ColumnName="BROADCAST_ENABLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STORE_TYPE">
+      <EntityTypeMapping TypeName="iBeaconModel.STORE_TYPE">
+        <MappingFragment StoreEntitySet="STORE_TYPE">
+          <ScalarProperty Name="ID_STORE_TYPE" ColumnName="ID_STORE_TYPE" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BEACON_NOTIFICATION">
+      <EntityTypeMapping TypeName="iBeaconModel.BEACON_NOTIFICATION">
+        <MappingFragment StoreEntitySet="BEACON_NOTIFICATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOTI_GUID" ColumnName="NOTI_GUID" />
+          <ScalarProperty Name="NOTI_MESSAGE" ColumnName="NOTI_MESSAGE" />
+          <ScalarProperty Name="NOTI_WIFI" ColumnName="NOTI_WIFI" />
+          <ScalarProperty Name="NOTI_PASSWORD_WIFI" ColumnName="NOTI_PASSWORD_WIFI" />
+          <ScalarProperty Name="STORE_ID" ColumnName="STORE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="iBeaconModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BEACON_DEVICES">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BEACON_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BEACON_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BEACON_UUID" Type="nvarchar" MaxLength="50" />
+          <Property Name="BEACON_MAJOR" Type="int" />
+          <Property Name="BEACON_MINOR" Type="int" Nullable="false" />
+          <Property Name="IS_BROADCASTING" Type="bit" />
+          <Property Name="SUBTITLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="SELLING_GLASS" Type="int" Nullable="false" />
+          <Property Name="ACTIVE" Type="bit" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BEACON_ITEMS_ADVERTISEMENT">
+          <Key>
+            <PropertyRef Name="ID_ITEM" />
+          </Key>
+          <Property Name="ID_ITEM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ITEAM_GUID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ITEM_IMG_URL" Type="nvarchar" MaxLength="255" />
+          <Property Name="STRORE_ID" Type="int" />
+          <Property Name="TYPE" Type="int" />
+          <Property Name="START_DATE" Type="date" />
+          <Property Name="END_DATE" Type="date" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+          <Property Name="NUMBER_LIKE" Type="int" />
+          <Property Name="NUMBER_1_STAR" Type="int" />
+          <Property Name="NUMBER_2_STAR" Type="int" />
+          <Property Name="NUMBER_3_STAR" Type="int" />
+          <Property Name="NUMBER_4_STAR" Type="int" />
+          <Property Name="NUMBER_5_STAR" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRICE" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'iBeacon.dbo.BEACON_NOTIFICATION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BEACON_NOTIFICATION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NOTI_GUID" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOTI_MESSAGE" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOTI_WIFI" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOTI_PASSWORD_WIFI" Type="nvarchar" MaxLength="50" />
+          <Property Name="STORE_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="BEACON_VIDEOS">
+          <Key>
+            <PropertyRef Name="ID_VIDEO" />
+          </Key>
+          <Property Name="ID_VIDEO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VIDEO_URL" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="STROE_ID" Type="int" />
+          <Property Name="TYPE" Type="int" />
+          <Property Name="START_DATE" Type="date" />
+          <Property Name="END_DATE" Type="date" />
+          <Property Name="IS_ACTIVE" Type="bit" />
+        </EntityType>
+        <EntityType Name="IBEACON_STORES">
+          <Key>
+            <PropertyRef Name="ID_STORE" />
+          </Key>
+          <Property Name="ID_STORE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="STORE_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="STORE_TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="MALL_ID" Type="int" Nullable="false" />
+          <Property Name="BROADCAST_ENABLE" Type="bit" Nullable="false" />
+          <Property Name="HOME_PAGE" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MALL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MALL_GUID" Type="nvarchar" MaxLength="50" />
+          <Property Name="MALL_NAME" Type="nvarchar" MaxLength="150" />
+          <Property Name="LOCATION_CODE" Type="nvarchar" MaxLength="150" />
+          <Property Name="BEACON_ID" Type="int" />
+          <Property Name="LAT" Type="int" />
+          <Property Name="LONG" Type="int" />
+          <Property Name="RADIUS" Type="nchar" MaxLength="10" />
+          <Property Name="BROADCAST_ENABLE" Type="bit" />
+        </EntityType>
+        <EntityType Name="STORE_TYPE">
+          <Key>
+            <PropertyRef Name="ID_STORE_TYPE" />
+          </Key>
+          <Property Name="ID_STORE_TYPE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="iBeaconModelStoreContainer">
+          <EntitySet Name="BEACON_DEVICES" EntityType="Self.BEACON_DEVICES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BEACON_ITEMS_ADVERTISEMENT" EntityType="Self.BEACON_ITEMS_ADVERTISEMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BEACON_VIDEOS" EntityType="Self.BEACON_VIDEOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IBEACON_STORES" EntityType="Self.IBEACON_STORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MALL" EntityType="Self.MALL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STORE_TYPE" EntityType="Self.STORE_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BEACON_NOTIFICATION" EntityType="Self.BEACON_NOTIFICATION" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BEACON_NOTIFICATION].[ID] AS [ID], 
+    [BEACON_NOTIFICATION].[NOTI_GUID] AS [NOTI_GUID], 
+    [BEACON_NOTIFICATION].[NOTI_MESSAGE] AS [NOTI_MESSAGE], 
+    [BEACON_NOTIFICATION].[NOTI_WIFI] AS [NOTI_WIFI], 
+    [BEACON_NOTIFICATION].[NOTI_PASSWORD_WIFI] AS [NOTI_PASSWORD_WIFI], 
+    [BEACON_NOTIFICATION].[STORE_ID] AS [STORE_ID]
+    FROM [dbo].[BEACON_NOTIFICATION] AS [BEACON_NOTIFICATION]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="iBeaconModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BEACON_DEVICES">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BEACON_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BEACON_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BEACON_UUID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BEACON_MAJOR" Type="Int32" />
+          <Property Name="BEACON_MINOR" Type="Int32" Nullable="false" />
+          <Property Name="IS_BROADCASTING" Type="Boolean" />
+          <Property Name="SUBTITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SELLING_GLASS" Type="Int32" Nullable="false" />
+          <Property Name="ACTIVE" Type="Boolean" />
+          <Property Name="STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BEACON_ITEMS_ADVERTISEMENT">
+          <Key>
+            <PropertyRef Name="ID_ITEM" />
+          </Key>
+          <Property Name="ID_ITEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ITEAM_GUID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ITEM_IMG_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="STRORE_ID" Type="Int32" />
+          <Property Name="TYPE" Type="Int32" />
+          <Property Name="START_DATE" Type="DateTime" Precision="0" />
+          <Property Name="END_DATE" Type="DateTime" Precision="0" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+          <Property Name="NUMBER_LIKE" Type="Int32" />
+          <Property Name="NUMBER_1_STAR" Type="Int32" />
+          <Property Name="NUMBER_2_STAR" Type="Int32" />
+          <Property Name="NUMBER_3_STAR" Type="Int32" />
+          <Property Name="NUMBER_4_STAR" Type="Int32" />
+          <Property Name="NUMBER_5_STAR" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BEACON_VIDEOS">
+          <Key>
+            <PropertyRef Name="ID_VIDEO" />
+          </Key>
+          <Property Name="ID_VIDEO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VIDEO_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STROE_ID" Type="Int32" />
+          <Property Name="TYPE" Type="Int32" />
+          <Property Name="START_DATE" Type="DateTime" Precision="0" />
+          <Property Name="END_DATE" Type="DateTime" Precision="0" />
+          <Property Name="IS_ACTIVE" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="IBEACON_STORES">
+          <Key>
+            <PropertyRef Name="ID_STORE" />
+          </Key>
+          <Property Name="ID_STORE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STORE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STORE_TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="MALL_ID" Type="Int32" Nullable="false" />
+          <Property Name="BROADCAST_ENABLE" Type="Boolean" Nullable="false" />
+          <Property Name="HOME_PAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MALL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MALL_GUID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MALL_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LOCATION_CODE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BEACON_ID" Type="Int32" />
+          <Property Name="LAT" Type="Int32" />
+          <Property Name="LONG" Type="Int32" />
+          <Property Name="RADIUS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="BROADCAST_ENABLE" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="STORE_TYPE">
+          <Key>
+            <PropertyRef Name="ID_STORE_TYPE" />
+          </Key>
+          <Property Name="ID_STORE_TYPE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BEACON_NOTIFICATION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NOTI_GUID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOTI_MESSAGE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOTI_WIFI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOTI_PASSWORD_WIFI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STORE_ID" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="iBeaconEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BEACON_DEVICES" EntityType="Self.BEACON_DEVICES" />
+          <EntitySet Name="BEACON_ITEMS_ADVERTISEMENT" EntityType="Self.BEACON_ITEMS_ADVERTISEMENT" />
+          <EntitySet Name="BEACON_VIDEOS" EntityType="Self.BEACON_VIDEOS" />
+          <EntitySet Name="IBEACON_STORES" EntityType="Self.IBEACON_STORES" />
+          <EntitySet Name="MALLs" EntityType="Self.MALL" />
+          <EntitySet Name="STORE_TYPE" EntityType="Self.STORE_TYPE" />
+          <EntitySet Name="BEACON_NOTIFICATION" EntityType="Self.BEACON_NOTIFICATION" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="iBeaconModelStoreContainer" CdmEntityContainer="iBeaconEntities">
+          <EntitySetMapping Name="BEACON_DEVICES">
+            <EntityTypeMapping TypeName="iBeaconModel.BEACON_DEVICES">
+              <MappingFragment StoreEntitySet="BEACON_DEVICES">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="BEACON_ID" ColumnName="BEACON_ID" />
+                <ScalarProperty Name="BEACON_Name" ColumnName="BEACON_Name" />
+                <ScalarProperty Name="BEACON_UUID" ColumnName="BEACON_UUID" />
+                <ScalarProperty Name="BEACON_MAJOR" ColumnName="BEACON_MAJOR" />
+                <ScalarProperty Name="BEACON_MINOR" ColumnName="BEACON_MINOR" />
+                <ScalarProperty Name="IS_BROADCASTING" ColumnName="IS_BROADCASTING" />
+                <ScalarProperty Name="SUBTITLE" ColumnName="SUBTITLE" />
+                <ScalarProperty Name="SELLING_GLASS" ColumnName="SELLING_GLASS" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BEACON_ITEMS_ADVERTISEMENT">
+            <EntityTypeMapping TypeName="iBeaconModel.BEACON_ITEMS_ADVERTISEMENT">
+              <MappingFragment StoreEntitySet="BEACON_ITEMS_ADVERTISEMENT">
+                <ScalarProperty Name="ID_ITEM" ColumnName="ID_ITEM" />
+                <ScalarProperty Name="ITEAM_GUID" ColumnName="ITEAM_GUID" />
+                <ScalarProperty Name="ITEM_IMG_URL" ColumnName="ITEM_IMG_URL" />
+                <ScalarProperty Name="STRORE_ID" ColumnName="STRORE_ID" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="NUMBER_LIKE" ColumnName="NUMBER_LIKE" />
+                <ScalarProperty Name="NUMBER_1_STAR" ColumnName="NUMBER_1_STAR" />
+                <ScalarProperty Name="NUMBER_2_STAR" ColumnName="NUMBER_2_STAR" />
+                <ScalarProperty Name="NUMBER_3_STAR" ColumnName="NUMBER_3_STAR" />
+                <ScalarProperty Name="NUMBER_4_STAR" ColumnName="NUMBER_4_STAR" />
+                <ScalarProperty Name="NUMBER_5_STAR" ColumnName="NUMBER_5_STAR" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BEACON_VIDEOS">
+            <EntityTypeMapping TypeName="iBeaconModel.BEACON_VIDEOS">
+              <MappingFragment StoreEntitySet="BEACON_VIDEOS">
+                <ScalarProperty Name="ID_VIDEO" ColumnName="ID_VIDEO" />
+                <ScalarProperty Name="VIDEO_URL" ColumnName="VIDEO_URL" />
+                <ScalarProperty Name="STROE_ID" ColumnName="STROE_ID" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IBEACON_STORES">
+            <EntityTypeMapping TypeName="iBeaconModel.IBEACON_STORES">
+              <MappingFragment StoreEntitySet="IBEACON_STORES">
+                <ScalarProperty Name="ID_STORE" ColumnName="ID_STORE" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="STORE_NAME" ColumnName="STORE_NAME" />
+                <ScalarProperty Name="STORE_TYPE_ID" ColumnName="STORE_TYPE_ID" />
+                <ScalarProperty Name="MALL_ID" ColumnName="MALL_ID" />
+                <ScalarProperty Name="BROADCAST_ENABLE" ColumnName="BROADCAST_ENABLE" />
+                <ScalarProperty Name="HOME_PAGE" ColumnName="HOME_PAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MALLs">
+            <EntityTypeMapping TypeName="iBeaconModel.MALL">
+              <MappingFragment StoreEntitySet="MALL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MALL_GUID" ColumnName="MALL_GUID" />
+                <ScalarProperty Name="MALL_NAME" ColumnName="MALL_NAME" />
+                <ScalarProperty Name="LOCATION_CODE" ColumnName="LOCATION_CODE" />
+                <ScalarProperty Name="BEACON_ID" ColumnName="BEACON_ID" />
+                <ScalarProperty Name="LAT" ColumnName="LAT" />
+                <ScalarProperty Name="LONG" ColumnName="LONG" />
+                <ScalarProperty Name="RADIUS" ColumnName="RADIUS" />
+                <ScalarProperty Name="BROADCAST_ENABLE" ColumnName="BROADCAST_ENABLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STORE_TYPE">
+            <EntityTypeMapping TypeName="iBeaconModel.STORE_TYPE">
+              <MappingFragment StoreEntitySet="STORE_TYPE">
+                <ScalarProperty Name="ID_STORE_TYPE" ColumnName="ID_STORE_TYPE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BEACON_NOTIFICATION">
+            <EntityTypeMapping TypeName="iBeaconModel.BEACON_NOTIFICATION">
+              <MappingFragment StoreEntitySet="BEACON_NOTIFICATION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOTI_GUID" ColumnName="NOTI_GUID" />
+                <ScalarProperty Name="NOTI_MESSAGE" ColumnName="NOTI_MESSAGE" />
+                <ScalarProperty Name="NOTI_WIFI" ColumnName="NOTI_WIFI" />
+                <ScalarProperty Name="NOTI_PASSWORD_WIFI" ColumnName="NOTI_PASSWORD_WIFI" />
+                <ScalarProperty Name="STORE_ID" ColumnName="STORE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
