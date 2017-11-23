@@ -10,7 +10,7 @@ namespace WcfServiceLibrary_iBeacon.DAL
 {
     public class Device_DAL
     {
-        iBeaconEntities _ctx = new iBeaconEntities();
+        iBeacon_Entities _ctx = new iBeacon_Entities();
 
         public List<BEACON_DEVICES> GetList()
         {
