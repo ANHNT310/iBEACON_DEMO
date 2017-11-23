@@ -52,15 +52,41 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\BEACON_DEVICES.cs">
+      <DependentUpon>Model_iBeacon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BEACON_ITEMS_ADVERTISEMENT.cs">
+      <DependentUpon>Model_iBeacon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BEACON_NOTIFICATION.cs">
+      <DependentUpon>Model_iBeacon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BEACON_VIDEOS.cs">
+      <DependentUpon>Model_iBeacon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\IBEACON_STORES.cs">
+      <DependentUpon>Model_iBeacon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\MALL.cs">
+      <DependentUpon>Model_iBeacon.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Model_iBeacon.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_iBeacon.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\Model_iBeacon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_iBeacon.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Model_iBeacon.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_iBeacon.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\STORE_TYPE.cs">
+      <DependentUpon>Model_iBeacon.tt</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +104,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <Content Include="Database\Model_iBeacon.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model_iBeacon.edmx</DependentUpon>
@@ -86,10 +116,8 @@
     <Content Include="Database\Model_iBeacon.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model_iBeacon.edmx</DependentUpon>
+      <LastGenOutput>Model_iBeacon.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

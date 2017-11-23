@@ -218,7 +218,7 @@ warning 6002: The table/view 'iBeacon.dbo.BEACON_NOTIFICATION' does not have a p
           <Property Name="NOTI_PASSWORD_WIFI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="STORE_ID" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="iBeaconEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="iBeacon_Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BEACON_DEVICES" EntityType="Self.BEACON_DEVICES" />
           <EntitySet Name="BEACON_ITEMS_ADVERTISEMENT" EntityType="Self.BEACON_ITEMS_ADVERTISEMENT" />
           <EntitySet Name="BEACON_VIDEOS" EntityType="Self.BEACON_VIDEOS" />
@@ -232,7 +232,7 @@ warning 6002: The table/view 'iBeacon.dbo.BEACON_NOTIFICATION' does not have a p
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="iBeaconModelStoreContainer" CdmEntityContainer="iBeaconEntities">
+        <EntityContainerMapping StorageEntityContainer="iBeaconModelStoreContainer" CdmEntityContainer="iBeacon_Entities">
           <EntitySetMapping Name="BEACON_DEVICES">
             <EntityTypeMapping TypeName="iBeaconModel.BEACON_DEVICES">
               <MappingFragment StoreEntitySet="BEACON_DEVICES">

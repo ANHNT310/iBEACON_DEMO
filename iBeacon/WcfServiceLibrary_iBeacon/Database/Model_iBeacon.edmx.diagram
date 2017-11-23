@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4f6bfd6d08be4e3d9889a5cb3d1323a4" Name="Diagram1">
+      <Diagram DiagramId="1cb5156b6ed54e438a4500990b0f3445" Name="Diagram1">
         <EntityTypeShape EntityType="iBeaconModel.BEACON_DEVICES" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="iBeaconModel.BEACON_ITEMS_ADVERTISEMENT" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="iBeaconModel.BEACON_VIDEOS" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />

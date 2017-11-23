@@ -1,2 +1,11 @@
 C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\obj\Debug\WcfServiceLibrary_iBeacon.csprojResolveAssemblyReference.cache
 C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\obj\Debug\WcfServiceLibrary_iBeacon.csproj.CoreCompileInputs.cache
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\bin\Debug\WcfServiceLibrary_iBeacon.dll.config
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\bin\Debug\WcfServiceLibrary_iBeacon.dll
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\bin\Debug\WcfServiceLibrary_iBeacon.pdb
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\bin\Debug\EntityFramework.dll
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\bin\Debug\EntityFramework.xml
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\obj\Debug\WcfServiceLibrary_iBeacon.dll
+C:\Users\ANHNT\Documents\iBeacon\iBeacon\WcfServiceLibrary_iBeacon\obj\Debug\WcfServiceLibrary_iBeacon.pdb
